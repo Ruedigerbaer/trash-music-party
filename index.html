@@ -21,6 +21,8 @@ body {
 img {
     max-width: 100%;
     max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
 }
 </style>
@@ -29,7 +31,28 @@ img {
 
 <body>
 
-<img src=Monke.png>
+<img id="bild" alt="">
+
+<script>
+
+const pfad = window.location.pathname;
+
+// Letzten Teil der URL auslesen
+const name = pfad.substring(pfad.lastIndexOf("/") + 1);
+
+// Bilddateien zuordnen
+const bilder = {
+    Monke: Monke.png,
+    Rickroll: Rickroll.gif,
+   
+};
+
+// Bild anzeigen
+if (bilder[name]) {
+    document.getElementById("bild").src = bilder[name];
+}
+
+</script>
 
 </body>
 </html>
