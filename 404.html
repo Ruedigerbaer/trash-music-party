@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<script>
+const pathSegmentsToKeep = 1;
+
+const location = window.location;
+const path = location.pathname.split('/');
+
+const route = path.slice(pathSegmentsToKeep + 1).join('/');
+
+window.location.replace(
+    location.origin +
+    '/' +
+    path.slice(1, pathSegmentsToKeep + 1).join('/') +
+    '/?route=' +
+    encodeURIComponent(route)
+);
+</script>
+
+</head>
+
+<body>
+</body>
+</html>
