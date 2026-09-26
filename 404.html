@@ -5,14 +5,18 @@
 <title></title>
 
 <script>
+
 const path = window.location.pathname;
 
+// Alles nach /trash-music-party/ ermitteln
 const base = "/trash-music-party/";
-const route = path.substring(base.length);
+const name = path.substring(base.length);
 
+// Zur normalen index.html wechseln
 window.location.replace(
-    base + "?bild=" + encodeURIComponent(route)
+    base + "?bild=" + encodeURIComponent(name)
 );
+
 </script>
 
 </head>
