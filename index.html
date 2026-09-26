@@ -35,14 +35,17 @@ img {
 
 <script>
 
-const parameter = new URLSearchParams(window.location.search);
-const name = parameter.get("bild");
+// Den letzten Teil der URL auslesen
+const pfad = window.location.pathname;
+const name = pfad.substring(pfad.lastIndexOf("/") + 1);
 
+// Zuordnung der URLs zu den Dateien
 const bilder = {
     "Monke": "bilder/Monke.png",
     "Rickroll": "bilder/Rickroll.gif"
 };
 
+// Passendes Bild laden
 if (bilder[name]) {
     document.getElementById("bild").src = bilder[name];
 }
