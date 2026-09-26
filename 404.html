@@ -5,19 +5,13 @@
 <title></title>
 
 <script>
-const pathSegmentsToKeep = 1;
+const path = window.location.pathname;
 
-const location = window.location;
-const path = location.pathname.split('/');
-
-const route = path.slice(pathSegmentsToKeep + 1).join('/');
+const base = "/trash-music-party/";
+const route = path.substring(base.length);
 
 window.location.replace(
-    location.origin +
-    '/' +
-    path.slice(1, pathSegmentsToKeep + 1).join('/') +
-    '/?route=' +
-    encodeURIComponent(route)
+    base + "?bild=" + encodeURIComponent(route)
 );
 </script>
 
