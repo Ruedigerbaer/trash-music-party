@@ -42,11 +42,10 @@ const name = pfad.substring(pfad.lastIndexOf("/") + 1);
 
 // Bilddateien zuordnen
 const bilder = {
-    Monke: bilder/Monke.png,
-    Rickroll: bilder/Rickroll.gif,
-   
+    "Monke": "bilder/Monke.png",
+    "Rickroll": "bilder/Rickroll.gif"
 };
-
+    
 // Bild anzeigen
 if (bilder[name]) {
     document.getElementById("bild").src = bilder[name];
